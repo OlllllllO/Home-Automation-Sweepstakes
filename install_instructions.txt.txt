@@ -1,0 +1,32 @@
+# installation instructions for setting up the Dragonboard for ELC registration.
+
+#-------------------- Components needed for the setup ------------------------------#
+#	1. Dragonboard 410c (https://www.arrow.com/en/products/dragonboard410c/arrow-development-tools)
+# 	2. USB Camera 
+# 	3. USB 2.0 Travel Hub expander
+#	4. HDMI monitor
+#	5. SD Card with Debian image (http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/dragonboard410c_sdcard_install_debian-*.zip)
+#-----------------------------------------------------------------------------------#
+
+#----------------------Software used in the project---------------------------------#
+#	1. Python
+#	2. PHP
+#	3. Opencv
+#	4. PHPMailer
+#	5. Epiphany Browser
+#------------------------------------------------------------------------------------#
+
+# Step.1 : Install Debian operating system on the Dragonboard with the SD card image. 
+#Follow instructions here: http://www.96boards.org/documentation/ConsumerEdition/DragonBoard-410c/Installation/WindowsSD.md/
+
+# Step.2 : Update and install software components with the following commands
+
+sudo su
+apt-get update
+apt-get upgrade
+apt-get install -y python-opencv
+
+#Step.3 Download the project files from Github 
+curl –L https://github.qualcomm.com/rajanmistry/Home-Automation-for-ELC-2017/archive/master.zip 
+
+

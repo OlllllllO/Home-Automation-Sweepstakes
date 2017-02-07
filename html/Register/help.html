@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Responsive jQuery BootStrap Form jQuery Validation</title>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+<body>
+<div style="width:90%; margin:auto; text-align:justify;">
+  <div>
+    <p><strong>Responsive HTML Form Full Functional with PHP Possessing Script and jQuery Validation, CSS Styling with 4 CSS Styles 1 Plane and 3  colours Available or Add Your Own and Google No Captcha Security Are You Human Field ( You will have to get a public and private reChaptcha Key for the domain your are going to use the form on for No Captcha to work here <a href="https://www.google.com/recaptcha/admin" target="_blank">https://www.google.com/recaptcha/admin</a></strong></p>
+    <p>For formatted code open in html editor or note pad and copy the acture form rather than the example code below. </p>
+    <p>Suitable for all major computer browsers and  mobile phones. Test by shrinking of the width you would view on a mobile phone, just shrink your browser to mobile phone size on a computer., To test jQuery validation just submit without filling out any fields.</p>
+    <p>Simple to make one or two changes to the php processing script and embed the form in your desired page and upload the assets folder with scripts into the same directory as you form page and bingo post yourself as message. Occasionally as with most forms the odd submission might go into your junk folder, so check there and within a minute or two your submission will be received.</p>
+    <p>To add the form to your page open responsive-jquery-bootstrap-form.html in a html and notepad editor copy that hear to the head of yoru page and the body to the body of your page upload page and assets folder and test. </p>
+    <p><strong>Instructions</strong></p>
+    <p>Open formmail.php in assets folder in a html or notepad editor.</p>
+    <p>Change </p>
+    <p>// EDIT THE 2 LINES BELOW AS REQUIRED<br />
+      <br />
+      // we'll begin by assigning the To address and message subject<br />
+$email_to=&quot;<span class="style1">youremail@domain.com</span>&quot;; // Change to your email<br />
+$subject=&quot;<span class="style1">Contact Upload Form</span>&quot;; // Change subject if wished<br />
+<br />
+// GO TO NEAR BOTTOM OF PAGE AND CHANGE TO YOUR CUSTOM REDIRECT PAGE </p>
+    <p>@mail($email_to, $email_subject, $email_message, $headers); <br />
+    header('Location: <span class="style1">redirect.html</span>'); // your custom redirect after submit, replace redirect.html with full path i.e. http://www.yourdomain.com/redirect.html</p>
+    <p>There is also one change you need to make in the responsive-jquery-bootstrap-form.html. You need to enter your public google rechptcha site key <br />
+    &lt;!-- you can resave if wished this page as responsive-jquery-bootstrap-form.php --&gt; </p>
+    <p>&lt;div class=&quot;g-recaptcha&quot; data-sitekey=&quot;<span class="style1" style="width:90%; margin:auto;">Enter Your Public Site Key Here</span>&quot; style=&quot;transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit-transform-origin:0 0; color:transparent; font-weight:normal; line-height:0px;&quot; tabindex=&quot;6&quot;&gt; &lt;/div&gt;</p>
+    <p>Max File Size Attachment Allowed</p>
+    <p>// Set Max File Attachment Size <br />
+      $.validator.addMethod(<br />
+&quot;maxfilesize&quot;,<br />
+function (value, element) {<br />
+return this.optional(element) || (element.files &amp;&amp; element.files[0]<br />
+&amp;&amp; element.files[0].size &lt; 1024 * 1024 * 4); // Set the * <span class="style1">4</span>) 4MB to max mb and test<br />
+},<br />
+'Maximum file size limit is <span class="style1">4</span>MB' // Alert seen if file size is to big<br />
+);</p>
+    <p>In ther validation rules on the form you can add or delte files types allowed.</p>
+    <p>file: { // Attachment 1<br />
+required: false, // required: false not a required field, required: true required field<br />
+accept: &quot;<span class="style1">jpg|jpe|jpeg|png|mp3|wav|aac|rtf|odt|doc|docx|pdf|txt|html</span>&quot;, // Add file types you wish to accept<br />
+maxfilesize: true  // Set false if unlimited size<br />
+}, </p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>
