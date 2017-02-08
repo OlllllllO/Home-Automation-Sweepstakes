@@ -1,8 +1,8 @@
 <?php
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
-require_once('Mail.php');
-require_once('Mail/mime.php');
+//require_once('Mail.php');
+//require_once('Mail/mime.php');
 require '../PHPMailer/PHPMailerAutoload.php';
  //$from = "Qualcomm<@infotrak.us>";
 
@@ -169,9 +169,9 @@ $body.= '
    
   <tr><td>
     <p>Drawings will be held in the Qualcomm booth #(201) once each day: </p>
-    <p>Tue, Feb. 21 at 3pm – 4 prizes</p>
-    <p>Wed, Feb. 22 at 3pm – 4 prizes</p>
-    <p>Thu, Feb. 23 at 1pm – 2 prizes</p>
+    <p>Tue, Feb. 21 at  3pm – 4 prizes</p>
+    <p>Wed, Feb. 22 at  3pm – 4 prizes</p>
+    <p>Thu, Feb. 23 at 12pm – 2 prizes</p>
     <p>Entrants must be present at drawing to win. Maximum one prize per entrant for entire Sweepstakes.</p>
     <p style="font-size:14px">NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See Official Rules at the Qualcomm booth #(201) at ELC for details, including eligibility requirements and entry deadlines.</p>
   </td></tr>
@@ -196,7 +196,7 @@ $body.= '
 </body>
 </html>
  ';
-   // send_email($to,$fullname,$subject,$body);
+    send_email($to,$fullname,$subject,$body);
 
 
 
@@ -208,13 +208,12 @@ $body.= '
 <center><h1>Thank you for your entry to the Qualcomm DragonBoard™ 410c Sweepstakes!</h1></center>
 <center><h2>Your entry form has been submitted.</h2></center> 
 <center><h2>Drawings will be held in the Qualcomm booth #(201) once each day:</h2></center>
-<center><h2>Tue, Feb. 21 at 3pm – 4 prizes</h2></center>
-<center><h2>Wed, Feb. 22 at 3pm – 4 prizes</h2></center>
-<center><h2>Thu, Feb. 23 at 1pm – 2 prizes</h2></center>
+<center><h2>Tue, Feb. 21 at  3pm – 4 prizes</h2></center>
+<center><h2>Wed, Feb. 22 at  3pm – 4 prizes</h2></center>
+<center><h2>Thu, Feb. 23 at 12pm – 2 prizes</h2></center>
 
 <center><h2>Entrants must be present at drawing to win. Maximum one prize per entrant for entire Sweepstakes.</h2></center>
-<A HREF="javascript:onClick=Minimize()">Minimize</A>
-<a href="javascript:window.open('','_parent','');window.close();">Close this window</a>
+
 
 <?php
 // echo "$body";

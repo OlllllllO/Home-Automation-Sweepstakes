@@ -4,9 +4,9 @@
  require_once "Mail.php";
  $timenow = microtime(true);
  echo "$timenow<br>";
- $from = "Support<abc@infotrak.us>";
+ $from = "From<name@domain.com>";
  echo "From : $from<br>";
- $to = "rajan.mistry@live.com";
+ $to = "Your email address here";
  echo "To : $to<br>";
  $subject = "Subject: New Email Gateway Test";
  echo "Subject : $subject<br>";
@@ -15,8 +15,8 @@
  
  $host = "ssl://smtp.gmail.com";
  $port = "465";
- $username = "rmistr.c@gmail.com";
- $password = "gmail4c_rmistr";
+ $username = "your_email@gmail.com";
+ $password = "your gmail password";
     echo "$host : $username : $password<br>";
  
  $headers = array ('From' => $from,

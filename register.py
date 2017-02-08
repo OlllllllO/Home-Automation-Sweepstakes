@@ -3,23 +3,23 @@
 import cv2, sys
 import numpy as np
 #import pyautogui
-from subprocess import Popen, PIPE
+#from subprocess import Popen, PIPE
 
 #import Tkinter
 #top = Tkinter.Tk()
 import os
 import webbrowser
 
-def keypress(sequence):
-    p = Popen(['xte'], stdin=PIPE)
-    p.communicate(input=sequence)
+#def keypress(sequence):
+#    p = Popen(['xte'], stdin=PIPE)
+#    p.communicate(input=sequence)
 
 
 url = 'http://localhost/Register'
 def OpenUrl():
     
     #os.system("killall -KILL chromium")
-    webbrowser.open(url,new=0)
+    webbrowser.open(url)
     #pyautogui.hotkey('ctrl', 'w')  # ctrl-w to close the tab
     #keypress('keydown Control_L')
     #keypress('key w')

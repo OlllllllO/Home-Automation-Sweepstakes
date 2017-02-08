@@ -86,7 +86,7 @@ $("#jqbsForm").validate({
                 email: true
             },
             phone: { //Phone
-			    required: false, // true to require
+			    required: true, // true to require
                 minlength: 6
             },
 			file: { // Attachment 1
@@ -297,10 +297,10 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
       </div>
       <!-- Text input-->
       <div class="input-row">
-        <label class="control-label" for="phone">Phone </label>
+        <label class="control-label" for="phone">Mobile Phone </label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input name="phone" id="phone" placeholder="Phone (Optional)" class="form-control optional phone" type="text">
+            <input name="phone" id="phone" placeholder="Cell Phone" class="form-control optional phone" type="text">
           </div>
           <label style="color:red; font-weight:normal;" class="error" for="phone" generated="true"></label>
         </div>

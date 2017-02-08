@@ -25,8 +25,30 @@ sudo su
 apt-get update
 apt-get upgrade
 apt-get install -y python-opencv
+apt-get install apache2 php5 php-pear
+pear install mail
+pear install Net_SMTP
+apt-get install epiphany-browser
+update-alternatives --config x-www-browser
+#select browser by entering the corresponding number.
+
+# make changes to default epiphany behavior- 
+# schema is located at /usr/share/glib-2.0/schemas/org.gnome.epiphany.gschema.xml
+# update this schema withthe modified schema file included in this project
+#recompile the browser schema
+apt-get install libglib2.0-bin
+glib-compile-schemas /usr/share/glib-2.0/schemas
+# restart epiphany
+
 
 #Step.3 Download the project files from Github 
-curl –L https://github.qualcomm.com/rajanmistry/Home-Automation-for-ELC-2017/archive/master.zip 
+wget https://github.com/OlllllllO/Home-Automation-for-ELC-2017/archive/master.zip
+unzip master.zip
+cd Home-Automation-for-ELC-2017-master/
+mv html/ /var/www/
+
+#launch the demo with
+cd /ETC/Home-Automation-for-ELC-2017-master
+python register.py frontalface.xml
 
 
