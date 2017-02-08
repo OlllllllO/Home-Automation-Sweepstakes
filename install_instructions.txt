@@ -28,6 +28,10 @@ apt-get install -y python-opencv
 apt-get install apache2 php5 php-pear
 pear install mail
 pear install Net_SMTP
+apt-get install cron
+# add the following line to the cron
+*/30 * * * * cd /var/www/html/Register/assets;php cronmail.php
+
 apt-get install epiphany-browser
 update-alternatives --config x-www-browser
 #select browser by entering the corresponding number.
