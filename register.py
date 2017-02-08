@@ -19,7 +19,7 @@ url = 'http://localhost/Register'
 def OpenUrl():
     
     #os.system("killall -KILL chromium")
-    webbrowser.open(url)
+    webbrowser.open(url,new=0)
     #pyautogui.hotkey('ctrl', 'w')  # ctrl-w to close the tab
     #keypress('keydown Control_L')
     #keypress('key w')
@@ -102,12 +102,15 @@ while retval:
         # http://docs.opencv.org/2.4/modules/core/doc/drawing_functions.html#rectangle
         cv2.rectangle(frame_show, (x, y), (x+w, y+h), (0, 0, 255), 2)
         font_typeface = FONT_FACES[2]
-        font_scale = .5
+        font_scale = .8
         font_color = (0,0,255)
-        font_weight = 1
+        font_weight = 2
         x = 2
         y = 400
-        cv2.putText(frame_show, "Press Space Bar to enter for a Chance to Win one DragonBoard 410c", (x,y), font_typeface, font_scale, font_color, font_weight)
+        cv2.putText(frame_show, "Press Space Bar to enter for a Chance to Win:", (x,y), font_typeface, font_scale, font_color, font_weight)
+        x = 2
+        y = 420
+        cv2.putText(frame_show, "One DragonBoard 410c", (x,y), font_typeface, font_scale, font_color, font_weight)
         #B = Tkinter.Button(top, text ="Click to Register", command = OpenUrl)
         # enter text Here
     # Show the image on the screen
