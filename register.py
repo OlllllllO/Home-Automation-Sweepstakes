@@ -2,18 +2,8 @@
 #!/usr/bin/env python
 import cv2, sys
 import numpy as np
-#import pyautogui
-#from subprocess import Popen, PIPE
-
-#import Tkinter
-#top = Tkinter.Tk()
 import os
 import webbrowser
-
-#def keypress(sequence):
-#    p = Popen(['xte'], stdin=PIPE)
-#    p.communicate(input=sequence)
-
 
 url = 'http://localhost/Register'
 def OpenUrl():
@@ -29,18 +19,7 @@ def savepic():
     IMAGE_FILE = "/var/www/html/Register/pic.jpg"
     cv2.imwrite(IMAGE_FILE, frame)
 
-#def create_layout(frame):
 
- #   Bframe = Frame(frame, bg = 'grey')
- #   Bframe.pack(side = Top, fill=BOTH)
-
- #   b = Button(Bframe, text='Register', command=OpenUrl, padx = 20)
- #   b.pack(pady = 20, padx = 20)
-
-#root = Tk()
-#frame = Frame(root)
-
-#root.mainloop()
 # Constants
 DEVICE_NUMBER = 0
 FONT_FACES = [
@@ -62,6 +41,7 @@ else:
 # Init the Cascade Classifier
 # http://docs.opencv.org/modules/objdetect/doc/cascade_classification.html#cascadeclassifier
 faceCascade = cv2.CascadeClassifier(XML_PATH)
+#eyeCascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
 # Init webcam
 # http://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture-videocapture
@@ -79,16 +59,13 @@ else:
 i = 0
 while retval:
     # Define the frame which the webcam will show
+    e1 = cv2.getTickCount()
     frame_show = frame
-
-    if i%5 == 0:
+    if i%59 == 0:
         # Convert frame to grayscale
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-
-
-        # Detect objects and return an array of faces
-        # http://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html#cascadeclassifier-detectmultiscale
+            # Detect objects and return an array of faces
+            # http://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html#cascadeclassifier-detectmultiscale
         faces = faceCascade.detectMultiScale(
             frame,
             scaleFactor=1.2,
@@ -106,22 +83,25 @@ while retval:
         font_color = (0,0,255)
         font_weight = 2
         x = 2
-        y = 400
+        y = 50
         cv2.putText(frame_show, "Press Space Bar to enter for a Chance to Win:", (x,y), font_typeface, font_scale, font_color, font_weight)
         x = 2
-        y = 420
+        y = 70
         cv2.putText(frame_show, "One DragonBoard 410c", (x,y), font_typeface, font_scale, font_color, font_weight)
-        #B = Tkinter.Button(top, text ="Click to Register", command = OpenUrl)
-        # enter text Here
+
     # Show the image on the screen
     # http://docs.opencv.org/2.4/modules/highgui/doc/user_interface.html#imshow
     cv2.imshow('Facial Detection', frame_show)
+    e2 = cv2.getTickCount()
+    time = (e2 - e1)/ cv2.getTickFrequency()
+    print i, time
     #cv2.namedWindow('Facial Detection',cv2.WINDOW_AUTOSIZE)
     #cv2.resizeWindow('Facial Detection', 700,500)
 
     # Grab next frame from webcam
     retval, frame = vc.read()
-	
+
+    
 	# Launch the Borwser if the spacebar is pressed
     # http://docs.opencv.org/2.4/modules/highgui/doc/user_interface.html#waitkey
     if cv2.waitKey(1) == 32:
@@ -135,3 +115,6 @@ while retval:
     	break
 
     i += 1
+
+
+
