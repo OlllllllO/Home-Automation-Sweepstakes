@@ -61,7 +61,7 @@ while retval:
     # Define the frame which the webcam will show
     e1 = cv2.getTickCount()
     frame_show = frame
-    if i%59 == 0:
+    if i%29 == 0:
         # Convert frame to grayscale
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             # Detect objects and return an array of faces
