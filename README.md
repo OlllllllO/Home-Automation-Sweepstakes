@@ -1,5 +1,5 @@
-# Home-Automation-for-ELC-2017
-This repository has the Home Automation and Qualcomm DragonBoard™ 410c Sweepstakes files for Embedded Linux Conference 2017
+# Home-Automation-Sweepstakes
+This repository has the Home Automation and Qualcomm DragonBoard™ 410c Sweepstakes files to be used in shows.
 
 A demo to showcase the DB 410c as a home automation enabler and use it to register participants for Qualcomm DragonBoard™ 410c Sweepstakes.
 
@@ -26,4 +26,4 @@ install_instructions.txt
 # Contributors
 
 * [Matthew Kneiser](https://github.com/themattman)
-* [Rajan Mistry](https://github.qualcomm.com/rajanmistry)
+* [Rajan Mistry](https://github.com/OlllllllO)

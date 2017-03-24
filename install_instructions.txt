@@ -28,7 +28,7 @@ apt-get install -y python-opencv
 apt-get install apache2 php5 php-pear
 pear install mail
 pear install Net_SMTP
-apt-get install cron
+apt-get install cron git
 # add the following line to the cron
 */30 * * * * cd /var/www/html/Register/assets;php cronmail.php
 
@@ -46,13 +46,12 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 
 
 #Step.3 Download the project files from Github 
-wget https://github.com/OlllllllO/Home-Automation-for-ELC-2017/archive/master.zip
-unzip master.zip
-cd Home-Automation-for-ELC-2017-master/
+git clone https://github.com/OlllllllO/Home-Automation-Sweepstakes
+cd Home-Automation-Sweepstakes/
 mv html/ /var/www/
 
-#launch the demo with
-cd /ETC/Home-Automation-for-ELC-2017-master
-python register.py frontalface.xml
+#launch the demo with the lbp cascade. 
+python register.py cascades/lbpcascade_frontalface.xml
+
 
 

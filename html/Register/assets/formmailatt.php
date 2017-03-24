@@ -31,39 +31,39 @@ function send_email($to, $fullname, $subject, $body) {
         $mail             = new PHPMailer();
 
         $mail->IsSMTP(); // telling the class to use SMTP
-			$mail->Host       = "gmail.com"; // SMTP server
-			$mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
-			                                           // 1 = errors and messages
-			                                           // 2 = messages only
-			$mail->SMTPAuth   = true;                  // enable SMTP authentication
-			$mail->SMTPSecure = "tls";                 // sets the prefix to the servier
-			$mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
-			$mail->Port       = 587;                   // set the SMTP port for the GMAIL server
-			$mail->Username   = "dragonboard410csweepstakes@gmail.com";  // GMAIL username
-			$mail->Password   = "gmail4c_rmistr";            // GMAIL password
-			$mail->IsHTML(true);
-			$mail->CharSet = 'UTF-8';
+      $mail->Host       = "gmail.com"; // SMTP server
+      $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+                                                 // 1 = errors and messages
+                                                 // 2 = messages only
+      $mail->SMTPAuth   = true;                  // enable SMTP authentication
+      $mail->SMTPSecure = "tls";                 // sets the prefix to the servier
+      $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+      $mail->Port       = 587;                   // set the SMTP port for the GMAIL server
+      $mail->Username   = "dragonboard410csweepstakes@gmail.com";  // GMAIL username
+      $mail->Password   = "gmail4c_rmistr";            // GMAIL password
+      $mail->IsHTML(true);
+      $mail->CharSet = 'UTF-8';
 
-			$mail->SetFrom('ELC@portland.com', 'Qualcomm DragonBoard™ 410c Sweepstakes');
+      $mail->SetFrom('QualcommBooth@IoTAustin.com', 'Qualcomm DragonBoard™ 410c Sweepstakes');
 
-			$mail->AddReplyTo("dragonboard410csweepstakes@gmail.com","Qualcomm DragonBoard™ 410c Sweepstakes");
+      $mail->AddReplyTo("dragonboard410csweepstakes@gmail.com","Qualcomm DragonBoard™ 410c Sweepstakes");
 
-			$mail->Subject    = $subject;
+      $mail->Subject    = $subject;
 
-			//$mail->AltBody    = $body; // optional, comment out and test
+      //$mail->AltBody    = $body; // optional, comment out and test
 
-			$mail->MsgHTML($body);
+      $mail->MsgHTML($body);
 
-			$address = $to;
-			$mail->AddAddress($address, $fullname);
+      $address = $to;
+      $mail->AddAddress($address, $fullname);
 
-			$mail->AddAttachment("../pic.jpg");      // attachment
-			
-			if(!$mail->Send()) {
-			  echo "Mailer Error: " . $mail->ErrorInfo;
-			} else {
-			  echo "Message sent!";
-			}
+      $mail->AddAttachment("../pic.jpg");      // attachment
+      
+      if(!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+      } else {
+        echo "Message sent!";
+      }
 
        
 } // End Function send_mail() 
@@ -168,12 +168,12 @@ $body.= '
   <p>Thank you for your entry to the Qualcomm DragonBoard™ 410c Sweepstakes.  You have been entered for a Chance to Win one DragonBoard™ 410c development board by Arrow Electronics, featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies, Inc.</br></p></td>   
    
   <tr><td>
-    <p>Drawings will be held in the Qualcomm booth #(201) once each day: </p>
-    <p>Tue, Feb. 21 at  3pm – 4 prizes</p>
-    <p>Wed, Feb. 22 at  3pm – 4 prizes</p>
-    <p>Thu, Feb. 23 at 12pm – 2 prizes</p>
-    <p>Entrants must be present at drawing to win. Maximum one prize per entrant for entire Sweepstakes.</p>
-    <p style="font-size:14px">NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See Official Rules at the Qualcomm booth #(201) at ELC for details, including eligibility requirements and entry deadlines.</p>
+    <p>Drawings will be held in the Qualcomm booth #(140) once each day: </p>
+    <p>Tue, Mar. 28 at 5pm – 2 prizes</p>
+    <p>Wed, Mar. 29 at 3:30pm – 2 prizes</p>
+    <p>Entrants must pick up their prize in person within one hour after the drawing time for that day. Maximum one prize per entrant for entire Sweepstakes.</p>
+    <p>Learn more about the DragonBoard 410c at <i><a href="www.96Boards.org/dragonboard">www.96Boards.org/dragonboard</a></i>, and check out DragonBoard 410c projects and source code examples at <i><a href="www.developer.qualcomm.com/project">www.developer.qualcomm.com/project</a></i>.</p>
+    <p style="font-size:14px">NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See Official Rules at the Qualcomm booth #(140) at Enterprise IoT Summit for details, including eligibility requirements and entry deadlines.</p>
   </td></tr>
   </tr>
     <td>
@@ -207,12 +207,10 @@ $body.= '
 <!-- include your own success html here - will only show if redirct fails -->
 <center><h1>Thank you for your entry to the Qualcomm DragonBoard™ 410c Sweepstakes!</h1></center>
 <center><h2>Your entry form has been submitted.</h2></center> 
-<center><h2>Drawings will be held in the Qualcomm booth #(201) once each day:</h2></center>
-<center><h2>Tue, Feb. 21 at  3pm – 4 prizes</h2></center>
-<center><h2>Wed, Feb. 22 at  3pm – 4 prizes</h2></center>
-<center><h2>Thu, Feb. 23 at 12pm – 2 prizes</h2></center>
-
-<center><h2>Entrants must be present at drawing to win. Maximum one prize per entrant for entire Sweepstakes.</h2></center>
+<center><h2>Drawings will be held in the Qualcomm booth #(140) once each day:</h2></center>
+<center><h2>Tue, Mar. 28 at 5pm – 2 prizes</h2></center>
+<center><h2>Wed, Mar. 29 at 3:30pm – 2 prizes</h2></center>
+<center><h2>Entrants must pick up their prize in person within one hour after the drawing time for that day. Maximum one prize per entrant for entire Sweepstakes.</h2></center>
 
 
 <?php

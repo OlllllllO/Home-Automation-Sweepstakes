@@ -46,8 +46,8 @@ $(function() {
 // Phone allows for internatonal numbers and ext 
 jQuery.validator.addMethod("phone", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, ""); 
-	return this.optional(element) || phone_number.length > 9 &&
-		phone_number.match(/^((\+)?[1-9]{1,2})?([-\s\.\(\)\])?((\(\d{1,4}\))|\d{1,4})(([-\s\.\(\)\])?[0-9]{1,12}){1,2}(\s*(ext|x)\s*\.?:?\s*([0-9]+))?$/);
+  return this.optional(element) || phone_number.length > 9 &&
+    phone_number.match(/^((\+)?[1-9]{1,2})?([-\s\.\(\)\])?((\(\d{1,4}\))|\d{1,4})(([-\s\.\(\)\])?[0-9]{1,12}){1,2}(\s*(ext|x)\s*\.?:?\s*([0-9]+))?$/);
 }, "Please specify a valid phone number");
 
 // Removes Error Message When reCaptcha is Checked Valid
@@ -69,7 +69,7 @@ $(function () {
    
 $("#jqbsForm").validate({
         ignore: ".ignore",
-		
+    
         invalidHandler : function() {
             $('html, body').animate({
                 scrollTop: $("#jqbsForm").offset().top // scroll top to your form on error
@@ -86,10 +86,10 @@ $("#jqbsForm").validate({
                 email: true
             },
             phone: { //Phone
-			    required: true, // true to require
+          required: true, // true to require
                 minlength: 6
             },
-			file: { // Attachment 1
+      file: { // Attachment 1
                 required: false, // required: false not a required field, required: true required field
                 accept: "jpg|jpe|jpeg|png|mp3|wav|aac|rtf|odt|doc|docx|pdf|txt|html", // Add file types you wish to accept
                 maxfilesize: true  // Set false if unlimited size
@@ -98,15 +98,15 @@ $("#jqbsForm").validate({
                 required: false,
                 minlength: 0,
                 maxlength: 160
-			},
-			hiddenRecaptcha: {
+      },
+      hiddenRecaptcha: {
                 required: function () {
                 if (grecaptcha.getResponse() == '') {
                      return true;
                 } else {
                      return false;
-			    }
-			  }				
+          }
+        }       
            },
        },
 
@@ -123,22 +123,22 @@ $("#jqbsForm").validate({
             phone: {
                 minlength: "Please enter 6 digits or more"
             },
-			file: { // Attachment 1 message
+      file: { // Attachment 1 message
                 required: "Required - Please attach a file", // Required will only show up if rules are set to true required above
                 accept: "This file type is not accepted"
             },
-			comment: {
+      comment: {
                 required: "Please enter your message",
                 minlength: "Please enter 20 or more characters",
                 maxlength: "Your message exceeds allowed characters"
             },
-			hiddenRecaptcha: {
+      hiddenRecaptcha: {
                 required: "Human response required"
             },
-			submitHandler: function(form) // CALLED ON SUCCESSFUL VALIDATION
+      submitHandler: function(form) // CALLED ON SUCCESSFUL VALIDATION
                 {
                 window.location.replace='/'; // Add your custom form submitted redirect page full path here the forward slash / will redirect to your home page
-			}
+      }
         },
    });
 
@@ -155,30 +155,30 @@ function limitText(limitField, limitCount, limitNum) {
 // Focus
 (function() {
 
-	// Create input element for testing
-	var inputs = document.createElement('input');
-	
-	// Create the supports object
-	var supports = {};
-	
-	supports.autofocus   = 'autofocus' in inputs;
-	supports.required    = 'required' in inputs;
-	supports.placeholder = 'placeholder' in inputs;
+  // Create input element for testing
+  var inputs = document.createElement('input');
+  
+  // Create the supports object
+  var supports = {};
+  
+  supports.autofocus   = 'autofocus' in inputs;
+  supports.required    = 'required' in inputs;
+  supports.placeholder = 'placeholder' in inputs;
 
-	// Fallback for autofocus attribute
-	if(!supports.autofocus) {
-		
-	}
-	
-	// Fallback for required attribute
-	if(!supports.required) {
-		
-	}
+  // Fallback for autofocus attribute
+  if(!supports.autofocus) {
+    
+  }
+  
+  // Fallback for required attribute
+  if(!supports.required) {
+    
+  }
 
-	// Fallback for placeholder attribute
-	if(!supports.placeholder) {
-		
-	}
+  // Fallback for placeholder attribute
+  if(!supports.placeholder) {
+    
+  }
 
 })();
 // Textarea Coubtdown
@@ -252,7 +252,7 @@ input.file[type="text"] {
 <body class="style1" style="background-image: url('gfx_bg.png'); background-repeat: no-repeat">
 <!-- Place All in Body -->
 <div class="outer-margin">
-	
+  
 <table align="center">
 <tr align="center">
 <center><h1><font color="white">DragonBoard™ 410c Sweepstakes</font></h1></center>
@@ -261,21 +261,21 @@ input.file[type="text"] {
 <center><h2>Submit this form for a Chance to Win one DragonBoard™ 410c development board by Arrow Electronics, 
 featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies, Inc.</h2></center>
 
-<p><center>Drawings will be held in the Qualcomm booth #(201) once each day:</center></p>
-<center>Tue, Feb. 21 at  3pm – 4 prizes</center>
-<center>Wed, Feb. 22 at  3pm – 4 prizes</center>
-<center>Thu, Feb. 23 at 12pm – 2 prizes</center>
-<center>Entrants must be present at drawing to win. Maximum one prize per entrant for entire Sweepstakes.</center>
+<p><center>Drawings will be held in the Qualcomm booth #(140) once each day:</center></p>
+<center>Tue, Mar. 28 at 5pm – 2 prizes</center>
+<center>Wed, Mar. 29 at 3:30pm – 2 prizes</center>
+
+<center>Entrants must pick up their prize in person within one hour after the drawing time for that day. Maximum one prize per entrant for entire Sweepstakes.</center>
 </br>
-	</tr>
+  </tr>
 <tr align="center">
-	<td>
-	<div class="input-column">
-    <img src="pic.jpg" alt="Portrait">	
-	</div>
-	</td>
-	<td>
-		  <div class="container jfbs-form">
+  <td>
+  <div class="input-column">
+    <img src="pic.jpg" alt="Portrait">  
+  </div>
+  </td>
+  <td>
+      <div class="container jfbs-form">
     <form name="jqbsForm" id="jqbsForm" action="assets/formmailatt.php" method="post" enctype='multipart/form-data' autocomplete="on">
       <!-- Text input-->
       <div class="input-row">
@@ -337,13 +337,13 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
         </div>
         <table>
   <tr>
-  <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><center>NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See Official Rules at the Qualcomm booth #(201) at ELC for details, including eligibility requirements and entry deadlines.  Entrants must be present at drawing to win.</center></span>
+  <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><center>NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See <i><a href="/Register/assets/ELC Dragonboard Sweeps 2017-Final.htm">Official Sweepstake Rules</a></i> at the Qualcomm booth #(140) at ELC for details, including eligibility requirements and entry deadlines.  Entrants must be present at drawing to win.</center></span>
 </tr>
 </table>
       </div>
     </form>
   </div>
-	</td>
+  </td>
 </tr>
   </table>
 
