@@ -6,7 +6,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Registration</title>
-<?PHP include '/lang/language_en.php';?>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
 <script src='//www.google.com/recaptcha/api.js'></script>
 <script src="assets/js/jquery-1.9.1.js"></script>
@@ -49,7 +48,7 @@ jQuery.validator.addMethod("phone", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, ""); 
   return this.optional(element) || phone_number.length > 9 &&
     phone_number.match(/^((\+)?[1-9]{1,2})?([-\s\.\(\)\])?((\(\d{1,4}\))|\d{1,4})(([-\s\.\(\)\])?[0-9]{1,12}){1,2}(\s*(ext|x)\s*\.?:?\s*([0-9]+))?$/);
-}, "Please specify a valid phone number");
+}, "Bitte gültige Telefonnummer eingeben");
 
 // Removes Error Message When reCaptcha is Checked Valid
 function recaptchaCallback() {
@@ -114,27 +113,27 @@ $("#jqbsForm").validate({
         // Specify the validation error messages
         messages: {
             fullname: {
-                required: "Please enter your full name",
-                minlength: "Please enter 3 or more characters"
+                required: "Bitte Vorname und Name eingeben",
+                minlength: "Bitte 3 oder mehr Zeichen eingeben"
             },
             email: {
-                required: "Please enter your email",
-                email: "Please enter a valid email"
+                required: "Bitte E-Mailadresse eingeben",
+                email: "Bitte eine gültige E-Mailadresse eingeben"
             },
             phone: {
-                minlength: "Please enter 6 digits or more"
+                minlength: "Bitte gib 6 oder mehr Zahlen ein"
             },
       file: { // Attachment 1 message
-                required: "Required - Please attach a file", // Required will only show up if rules are set to true required above
-                accept: "This file type is not accepted"
+                required: "Bitte eine Datei anhängen", // Required will only show up if rules are set to true required above
+                accept: "Dieser Dateityp wird leider nicht akzeptiert"
             },
       comment: {
-                required: "Please enter your message",
-                minlength: "Please enter 20 or more characters",
-                maxlength: "Your message exceeds allowed characters"
+                required: "Bitte gib deine Nachricht ein",
+                minlength: "Bitt gib 20 oder mehr Zeichen ein",
+                maxlength: "Deine Nachricht überschreitet die maximale Zeichenanzahl "
             },
       hiddenRecaptcha: {
-                required: "Human response required"
+                required: "Persönliche Eingabe erforderlich"
             },
       submitHandler: function(form) // CALLED ON SUCCESSFUL VALIDATION
                 {
@@ -256,18 +255,16 @@ input.file[type="text"] {
   
 <table align="center">
 <tr align="center">
-<center><h1><font>The Heading<?php echo "The Heading"; ?></font></h1><a href="index_de.html">Switch to German</a></center>
-
+<center><h1><font>DragonBoard™ 410c Gewinnspiel</font></h1><a href="index.html">Switch to English</a></center>
 </br>
 </br>
-<center><h2>Submit this form for a Chance to Win one DragonBoard™ 410c development board by Arrow Electronics, 
-featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies, Inc.</h2></center>
+<center><h2>Fülle den Bogen aus und hab die Chance bei Arrow ein DragonBoard™ 410c zu gewinnen. Das Board beinhaltet einen Qualcomm® Snapdragon™ 410 processor von Qualcomm Technologies, Inc</h2></center>
 
-<p><center>Drawings will be held in the Arrow stand #33 once each day:</center></p>
-<center>Sat, Aug. 26 at 16:00 – 5 prizes</center>
-<center>Sun, Aug. 27 at 16:00 – 5 prizes</center>
+<p><center>Die Zeihung der Gewinner erfolgt am Arrow-Stand (#33):</center></p>
+<center>Samstag, Aug. 26 at 16:00 – 5 prizes</center>
+<center>Sonntag, Aug. 27 at 16:00 – 5 prizes</center>
 
-<center>Entrants must pick up their prize in person within one hour after the drawing time for that day. Maximum one prize per entrant for entire Sweepstakes.</center>
+<center>Teilnehmer müssen den Preis persönlich am gleichen Tag entgegen nehmen. Pro Teilnehmer ist nur eine Registrierung möglich.</center>
 </br>
   </tr>
 <tr align="center">
@@ -281,10 +278,10 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
     <form name="jqbsForm" id="jqbsForm" action="assets/formmailatt.php" method="post" enctype='multipart/form-data' autocomplete="on">
       <!-- Text input-->
       <div class="input-row">
-        <label class="control-label" for="fullname">Full Name</label>
+        <label class="control-label" for="fullname">Vollständiger Name</label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="fullname" autofocus="autofocus" id="fullname" placeholder="Full Name *" class="form-control" type="text">
+            <input  name="fullname" autofocus="autofocus" id="fullname" placeholder="Vollständiger Name *" class="form-control" type="text">
           </div>
           <label style="color:red; font-weight:normal;" class="error" for="fullname" generated="true"></label>
         </div>
@@ -301,7 +298,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
       </div>
       <!-- Text input-->
       <div class="input-row">
-        <label class="control-label" for="phone">Mobile Phone </label>
+        <label class="control-label" for="phone">Mobil Telefonnummer</label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
             <input name="phone" id="phone" placeholder="Cell Phone" class="form-control optional phone" type="text">
@@ -312,7 +309,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
       
       <!-- Text area dashdasharrow -->
       <div style="display:block; min-height:120px; margin-top:-5px;">
-        <label class="control-label" for="comment">Comment</label>
+        <label class="control-label" for="comment">Hinweis</label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
             <textarea class="form-control" name="comment" id="comment" placeholder="Message *" onKeyUp="limitTextCount('comment', 'divcount', 160);" onKeyDown="limitTextCount('comment', 'divcount', 160);"></textarea>
@@ -339,7 +336,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
         </div>
         <table>
   <tr>
-  <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><center>NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See <i><a href="/Register/assets/ELC Dragonboard Sweeps 2017-Final.htm">Official Sweepstake Rules</a></i> at the Arrow stand #33 at Maker Faire Hannover for details, including eligibility requirements and entry deadlines. Entrants must be present at drawing to win. </center></span>
+  <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><center>Keine Zahlung oder Kauf für die Teilnahme notwendig. Eine Zahklung oder Kauf erhöht nicht deine Gewinnchancen. Bitte beachte die offiziellen Teilnahmebedingungen sowie Zeitraum für das Gewinnspiel am Arrow Stand (#33) bei der Hannover Maker Faire 2017. Teilnehmer müssen bei der Verlosung vorhanden sein um den Gewinn entgegen nehmen zu können.<i><a href="/Register/assets/ELC Dragonboard Sweeps 2017-Final.htm">Official Sweepstake Rules</a></i></center></span>
 </tr>
 </table>
       </div>

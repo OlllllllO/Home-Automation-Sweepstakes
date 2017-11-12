@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Registration</title>
-<?PHP include '/lang/language_en.php';?>
+<?php include 'lang/language_en.php';?>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
 <script src='//www.google.com/recaptcha/api.js'></script>
 <script src="assets/js/jquery-1.9.1.js"></script>
@@ -49,7 +49,7 @@ jQuery.validator.addMethod("phone", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, ""); 
   return this.optional(element) || phone_number.length > 9 &&
     phone_number.match(/^((\+)?[1-9]{1,2})?([-\s\.\(\)\])?((\(\d{1,4}\))|\d{1,4})(([-\s\.\(\)\])?[0-9]{1,12}){1,2}(\s*(ext|x)\s*\.?:?\s*([0-9]+))?$/);
-}, "Please specify a valid phone number");
+}, "<?php echo $feedback_02;?>");
 
 // Removes Error Message When reCaptcha is Checked Valid
 function recaptchaCallback() {
@@ -114,27 +114,27 @@ $("#jqbsForm").validate({
         // Specify the validation error messages
         messages: {
             fullname: {
-                required: "Please enter your full name",
-                minlength: "Please enter 3 or more characters"
+                required: "<?php echo $feedback_03;?>",
+                minlength: "<?php echo $feedback_04;?>"
             },
             email: {
-                required: "Please enter your email",
-                email: "Please enter a valid email"
+                required: "<?php echo $feedback_05;?>",
+                email: "<?php echo $feedback_06;?>"
             },
             phone: {
-                minlength: "Please enter 6 digits or more"
+                minlength: "<?php echo $feedback_07;?>"
             },
       file: { // Attachment 1 message
-                required: "Required - Please attach a file", // Required will only show up if rules are set to true required above
-                accept: "This file type is not accepted"
+                required: "<?php echo $feedback_08;?>", // Required will only show up if rules are set to true required above
+                accept: "<?php echo $feedback_09;?>"
             },
       comment: {
-                required: "Please enter your message",
-                minlength: "Please enter 20 or more characters",
-                maxlength: "Your message exceeds allowed characters"
+                required: "<?php echo $feedback_10;?>",
+                minlength: "<?php echo $feedback_11;?>",
+                maxlength: "<?php echo $feedback_12;?>"
             },
       hiddenRecaptcha: {
-                required: "Human response required"
+                required: "<?php echo $feedback_13;?>"
             },
       submitHandler: function(form) // CALLED ON SUCCESSFUL VALIDATION
                 {
@@ -256,18 +256,17 @@ input.file[type="text"] {
   
 <table align="center">
 <tr align="center">
-<center><h1><font>The Heading<?php echo "The Heading"; ?></font></h1><a href="index_de.html">Switch to German</a></center>
+<center><h1><font><?php echo "$heading_01"; ?></font></h1><a href="index_de.php">Switch to German</a></center>
 
 </br>
 </br>
-<center><h2>Submit this form for a Chance to Win one DragonBoard™ 410c development board by Arrow Electronics, 
-featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies, Inc.</h2></center>
+<center><h2><?php echo "$heading_02"?></h2></center>
 
-<p><center>Drawings will be held in the Arrow stand #33 once each day:</center></p>
-<center>Sat, Aug. 26 at 16:00 – 5 prizes</center>
-<center>Sun, Aug. 27 at 16:00 – 5 prizes</center>
+<p><center><?php echo $heading_03;?></center></p>
+<center><?php echo $heading_03a;?></center>
+<center><?php echo $heading_03b;?></center>
 
-<center>Entrants must pick up their prize in person within one hour after the drawing time for that day. Maximum one prize per entrant for entire Sweepstakes.</center>
+<center><?php echo $disclaim_01;?></center>
 </br>
   </tr>
 <tr align="center">
@@ -281,7 +280,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
     <form name="jqbsForm" id="jqbsForm" action="assets/formmailatt.php" method="post" enctype='multipart/form-data' autocomplete="on">
       <!-- Text input-->
       <div class="input-row">
-        <label class="control-label" for="fullname">Full Name</label>
+        <label class="control-label" for="fullname"><?php echo $label_01;?></label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input  name="fullname" autofocus="autofocus" id="fullname" placeholder="Full Name *" class="form-control" type="text">
@@ -291,7 +290,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
       </div>
       <!-- Text input-->
       <div class="input-row">
-        <label class="control-label" for="email">E-Mail</label>
+        <label class="control-label" for="email"><?php echo $label_02;?></label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
             <input name="email" id="email" placeholder="Email *" class="form-control" type="text">
@@ -301,7 +300,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
       </div>
       <!-- Text input-->
       <div class="input-row">
-        <label class="control-label" for="phone">Mobile Phone </label>
+        <label class="control-label" for="phone"><?php echo $label_03;?></label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
             <input name="phone" id="phone" placeholder="Cell Phone" class="form-control optional phone" type="text">
@@ -312,12 +311,12 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
       
       <!-- Text area dashdasharrow -->
       <div style="display:block; min-height:120px; margin-top:-5px;">
-        <label class="control-label" for="comment">Comment</label>
+        <label class="control-label" for="comment"><?php echo $label_04;?></label>
         <div class="inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
             <textarea class="form-control" name="comment" id="comment" placeholder="Message *" onKeyUp="limitTextCount('comment', 'divcount', 160);" onKeyDown="limitTextCount('comment', 'divcount', 160);"></textarea>
           </div>
-          <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;">160 Countdown</span>
+          <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><?php echo $label_05;?></span>
           <label style="color:red; font-weight:normal;" class="error" for="comment" generated="true"></label>
         </div>
       </div>
@@ -339,7 +338,7 @@ featuring the Qualcomm® Snapdragon™ 410 processor from Qualcomm Technologies,
         </div>
         <table>
   <tr>
-  <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><center>NO PAYMENT OR PURCHASE NECESSARY TO ENTER OR WIN.  A PAYMENT OR PURCHASE DOES NOT IMPROVE YOUR CHANCES OF WINNING.  See <i><a href="/Register/assets/ELC Dragonboard Sweeps 2017-Final.htm">Official Sweepstake Rules</a></i> at the Arrow stand #33 at Maker Faire Hannover for details, including eligibility requirements and entry deadlines. Entrants must be present at drawing to win. </center></span>
+  <span id="divcount" style="font-size:0.8em; color:#999999; margin-top:4px; float:right;"><center><?php echo $disclaim_02;?><i><a href="/Register/assets/ELC Dragonboard Sweeps 2017-Final.htm">Official Sweepstake Rules</a></i><?php echo $disclaim_03;?></center></span>
 </tr>
 </table>
       </div>

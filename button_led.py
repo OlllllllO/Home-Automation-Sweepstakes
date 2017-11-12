@@ -1,17 +1,18 @@
-from libsoc_zero.GPIO import Button
-from libsoc_zero.GPIO import LED
-from time import sleep
+import mraa
+import time
+print (mraa.getVersion())
 
-btn = Button('GPIO-G')
-led = LED('GPIO-E')
+button = mraa.Gpio(29)
+button.dir(mraa.DIR_IN)
 
+i=0
 
 while True:
-
-    btn.wait_for_press()
-    if led.is_lit:
-        led.off()
-    else:
-        led.off()
-
-    sleep(1)
+	touchButton = int(button.read())
+	
+	if(touchButton == 1):
+	    i=0 
+	    print i, " : ", touchButton
+	else:
+	    i = i+1
+	    print i, " : ", touchButton

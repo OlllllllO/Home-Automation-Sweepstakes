@@ -78,14 +78,14 @@ while retval:
     touchButton = int(button.read())
     if(touchButton == 1):
         buttoncount=0
-        print "........................................",buttoncount, touchButton
+        #print "........................................",buttoncount, touchButton
     else:
         buttoncount = buttoncount+1
-        print "........................................",buttoncount, touchButton
+        #print "........................................",buttoncount, touchButton
         if (buttoncount == 15):
             savepic()
             OpenUrl()
-            print "........................................Button pressed."
+            print "...............Button pressed..............."
                 
     frame_show = frame
     if i%29 == 0:
@@ -111,7 +111,7 @@ while retval:
         font_weight = 2
         x = 2
         y = 50
-        cv2.putText(frame_show, "Press Space Bar to enter for a Chance to Win:", (x,y), font_typeface, font_scale, font_color, font_weight)
+        cv2.putText(frame_show, "Press the RED button to enter for a Chance to Win:", (x,y), font_typeface, font_scale, font_color, font_weight)
         x = 2
         y = 70
         cv2.putText(frame_show, "One DragonBoard 410c", (x,y), font_typeface, font_scale, font_color, font_weight)

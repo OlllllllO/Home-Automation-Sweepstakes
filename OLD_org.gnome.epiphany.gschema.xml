@@ -71,14 +71,13 @@
                         <summary>Process model</summary>
                         <description>This option allows to set the process model used. Use 'shared-secondary-process' to use a single web process shared by all the tabs and 'one-secondary-process-per-web-view' to use a different web process for each tab.</description>
                 </key>
-                <key type="u" name="max-processes">
-                        <default>0</default>
-                        <summary>Maximum number of web processes created at the same time when using 'one-secondary-process-per-web-view' model</summary>
-                        <description>This option sets a limit to the number of web processes that will be used at the same time for the 'one-secondary-process-per-web-view' model. The default value is '0' and means no limit.</description>
-
-                </key>
 	</schema>
 	<schema path="/org/gnome/epiphany/ui/" id="org.gnome.Epiphany.ui">
+		<key name="toolbar-style" enum="org.gnome.Epiphany.EphyPrefsUIToolbarStyle">
+			<default>'both-horiz'</default>
+			<summary>Toolbar style</summary>
+			<description>Toolbar style. Allowed values are "" (use GNOME default style), "both" (text and icons), "both-horiz" (text besides icons), "icons", and "text".</description>
+		</key>
 		<key type="b" name="always-show-tabs-bar">
 			<default>false</default>
 			<summary>[Deprecated]</summary>
@@ -88,16 +87,6 @@
 			<default>false</default>
 			<summary>Visibility of the downloads window</summary>
 			<description>Hide or show the downloads window. When hidden, a notification will be shown when new downloads are started.</description>
-		</key>
-		<key type="b" name="expand-tabs-bar">
-			<default>true</default>
-			<summary>Expand tabs size to fill the available space on the tabs bar.</summary>
-			<description>If enabled the tabs will expand to use the entire available space in the tabs bar.</description>
-		</key>
-		<key name="tabs-bar-position" enum="org.gnome.Epiphany.EphyPrefsUITabsBarPosition">
-			<default>'top'</default>
-			<summary>The position of the tabs bar.</summary>
-			<description>Controls where the tabs bar is shown. Possible values are 'top' (the default), 'bottom', 'left' (vertical tabs with bar on the left) and 'right' (vertical tabs with bar on the right).</description>
 		</key>
 		<key name="tabs-bar-visibility-policy" enum="org.gnome.Epiphany.EphyPrefsUITabsBarVisibilityPolicy">
 			<default>'never'</default>
@@ -154,6 +143,11 @@
 			<default>'iso-8859-1'</default>
 			<summary>Default encoding</summary>
 			<description>Default encoding. Accepted values are the ones WebKitGTK+ can understand.</description>
+		</key>
+		<key type="i" name="cache-size">
+			<default>50</default>
+			<summary>Size of disk cache</summary>
+			<description>Size of disk cache, in MB.</description>
 		</key>
 		<key type="as" name="language">
 			<default>[]</default>
